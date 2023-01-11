@@ -171,19 +171,14 @@ int[,,] CreatRandom3dArray()
     int y=Convert.ToInt32(Console.ReadLine());
     Console.Write("Input coordinate z for a three-dimensional array: ");
     int z=Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a min possible value: ");
-    int minValue=Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a max possible value: ");
-    int maxValue=Convert.ToInt32(Console.ReadLine());
-
 
     int[,,] array=new int[x,y,z];
 
     for(int i=0; i<x; i++)
         for(int j =0; j<y; j++)
             for(int k =0; k<z; k++)
+            array [i,j,k] = new Random().Next(10, 99);
 
-            array [i,j,k] = new Random().Next(minValue, maxValue+1);
 
     return array;
 }
@@ -191,15 +186,19 @@ int[,,] CreatRandom3dArray()
 void Show3dArray (int[,,] array)
 {
     for(int i=0; i<array.GetLength(0); i++)
-    {
+  {
         for(int j=0; j<array.GetLength(1); j++)
+           {
+            
             for(int k =0; k<array.GetLength(2); k++)
-
-            Console.Write(array [i,j,k] + " ");
-
-        Console.WriteLine( );
+            {
+             Console.Write( $"X({i}) Y({j}) Z({k})={array[i,j,k]}; ");
+             Console.WriteLine( );
+            }
     }
+  
     Console.WriteLine( );
+  }
 }
 
 int[,,] myArray = CreatRandom3dArray();
