@@ -1,4 +1,41 @@
-﻿// ДЗ.1
+﻿// К Д.з. 1,2,3.
+
+// int[,] CreatRandom2dArray()
+// {
+//     Console.Write("Input a number of rows: ");
+//     int rows=Convert.ToInt32(Console.ReadLine());
+//     Console.Write("Input a number of columns: ");
+//     int colums=Convert.ToInt32(Console.ReadLine());
+//     Console.Write("Input a min possible value: ");
+//     int minValue=Convert.ToInt32(Console.ReadLine());
+//     Console.Write("Input a max possible value: ");
+//     int maxValue=Convert.ToInt32(Console.ReadLine());
+
+//     int[,] array=new int[rows, colums];
+
+//     for(int i=0; i<rows; i++)
+//         for(int j =0; j<colums; j++)
+//             array [i,j] = new Random().Next(minValue, maxValue+1);
+
+//     return array;
+// }
+
+// void Show2dArray (int[,] array)
+// {
+//     for(int i=0; i<array.GetLength(0); i++)
+//     {
+//         for(int j=0; j<array.GetLength(1); j++)
+//             Console.Write(array [i,j] + " ");
+
+//         Console.WriteLine( );
+//     }
+//     Console.WriteLine( );
+// }
+
+// int[,] myArray = CreatRandom2dArray();
+// Show2dArray(myArray);
+
+// ДЗ.1
 // Задайте двумерный массив. Напишите программу, 
 // которая упорядочит по убыванию элементы каждой строки двумерного массива.
 // Например, задан массив:
@@ -9,41 +46,6 @@
 // 7 4 2 1
 // 9 5 3 2
 // 8 4 4 2
-
-int[,] CreatRandom2dArray()
-{
-    Console.Write("Input a number of rows: ");
-    int rows=Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a number of columns: ");
-    int colums=Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a min possible value: ");
-    int minValue=Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a max possible value: ");
-    int maxValue=Convert.ToInt32(Console.ReadLine());
-
-    int[,] array=new int[rows, colums];
-
-    for(int i=0; i<rows; i++)
-        for(int j =0; j<colums; j++)
-            array [i,j] = new Random().Next(minValue, maxValue+1);
-
-    return array;
-}
-
-void Show2dArray (int[,] array)
-{
-    for(int i=0; i<array.GetLength(0); i++)
-    {
-        for(int j=0; j<array.GetLength(1); j++)
-            Console.Write(array [i,j] + " ");
-
-        Console.WriteLine( );
-    }
-    Console.WriteLine( );
-}
-
-int[,] myArray = CreatRandom2dArray();
-Show2dArray(myArray);
 
 // void Decreasing(int[,]array)
 // {
@@ -161,3 +163,44 @@ Show2dArray(myArray);
 // 34(1,0,0) 41(1,1,0)
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
+
+int[,,] CreatRandom3dArray()
+{   Console.Write("Input coordinate x for a three-dimensional array: ");
+    int x=Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input coordinate y for a three-dimensional array: ");
+    int y=Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input coordinate z for a three-dimensional array: ");
+    int z=Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a min possible value: ");
+    int minValue=Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a max possible value: ");
+    int maxValue=Convert.ToInt32(Console.ReadLine());
+
+
+    int[,,] array=new int[x,y,z];
+
+    for(int i=0; i<x; i++)
+        for(int j =0; j<y; j++)
+            for(int k =0; k<z; k++)
+
+            array [i,j,k] = new Random().Next(minValue, maxValue+1);
+
+    return array;
+}
+
+void Show3dArray (int[,,] array)
+{
+    for(int i=0; i<array.GetLength(0); i++)
+    {
+        for(int j=0; j<array.GetLength(1); j++)
+            for(int k =0; k<array.GetLength(2); k++)
+
+            Console.Write(array [i,j,k] + " ");
+
+        Console.WriteLine( );
+    }
+    Console.WriteLine( );
+}
+
+int[,,] myArray = CreatRandom3dArray();
+Show3dArray(myArray);
